@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Merienda+One|Oswald');
+body{
+	overflow-x: hidden;
+	font-family: 'Acme', sans-serif;
+}
+.notextdeco li {
+	list-style-type: none;
+	padding: 3%;
+}
+#menu-items{
+	margin-top: 5%;
+}
+#menu-items ul li a{
+	color: #6b6e73;
+	font-size: 170%;
+	font-style: bold;
+	font-family: 'Merienda One', cursive;
+}
+#menu-items ul li a:hover{
+	text-decoration: none;
+	color: #ffffff;
+}
+#menu-items ul li i{
+	font-size: 160%;
+	color: #ffffff;
+}
+.topmarg30{
+	margin-top: 20%;
+}
+.topmargin10{
+	margin-top: 2%;
+}
+.bella {
+	color: #b276ba;
+
+}
+.bella a:hover{
+	text-decoration: none;
+	
+}
+.welcomediv{
+	height: 100vh;
+	background-image: url('../images/bealady.jpg');
+	background-size: cover;
+	top: 0px;
+	position: ;
+	background-attachment: fixed;
+}
+.followup {
+	height: 100vh;
+	width: 100%
+	top: 0px;
+	z-index: ;
+	position: ;
+}
+.googlefont{
+	font-family: 'Acme', sans-serif;
+}
+.wyttxt{
+	color:white;
+	z-index: 1000;
+}
+.catalogue img{
+	width:100%;
+	background-attachment: fixed;
+
+}
+.wallppr2{
+	height: 100vh;
+	background-size: cover;
+	background-attachment: fixed;
+}
+#slideshow img{
+	width: 100%;
+	height: 100vh;
+	top: 0px;
+	background-attachment: ;
+	position: relative;
+}
+#slideshow {
+	overflow: hidden;
+	position: relative;
+	
+}
+.info{
+	position: absolute;
+	top: 15vh;
+	z-index: 1000;
+	margin-left: 10%
+
+}
+.info span{
+	font-size: 150%;
+	text-align: right;
+}
+.shadow{
+	box-shadow: 2px 2px 3px #888888;
+}
+#contactmap{
+	margin-top: 20vh;
+	height: 80vh;
+	background-color: white;
+	z-index: 1000;
+	position: relative;
+}
+#map-canvas{
+	z-index: 1;
+	position: absolute;
+}
+.team img{
+	height: 100%;
+}
+.wallppr2 {
+	background-image: url('../images/theemap.png');
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+}
+
+[aos="fade"] {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+[aos="fade"].aos-animate {
+  opacity: 1;
+}
