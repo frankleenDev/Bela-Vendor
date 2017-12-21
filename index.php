@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
+    <title>BeaLady</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="sidebar.css">
     <link href="demo.css" rel="stylesheet">
     <script type="text/javascript" src="js/cycle2.js"></script>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAIPgjrr6EtysU8E8VAlqqOZedrMINdMHk&callback=initMap" type="text/javascript"></script>
+
 
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -29,50 +32,63 @@
 
     <div id="wrapper">
  
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <div class="col-md-12">
-                <div class="col-md-2">
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div id="menu-items" class="col-md-6 col-md-offset-2">
-                    <ul class="notextdeco">
-                        <li><i class="fa fa-home" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php">Home</a></li>
-                        <li><i class="fa fa-puzzle-piece" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php#Mission">Mission</a></li>
-                        <li><i class="fa fa-info-circle" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php#aboutus">About Us</a></li>
-                        <li><i class="fa fa-users" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php#team">Team</a></li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php#contact">Get Intouch</a></li>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>&ensp;&ensp;<a href="index.php#coverage">Coverage</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <?php include 'slider.php'; ?>
 
         <!-- Page content -->
         <div id="page-content-wrapper">
         
-            <div class="container-fluid">
-                <div id="" class="col-md-1" style="z-index: 3000">
-                    <a href="#" id="menu-toggle"><img src="images/menu.png" width="100%"></a>                    
+            <div class="row">
+                <div id="" class="col-md-1" style="z-index: 1900;position: fixed;">
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="images/menu.png"></span>                    
                 </div>
-                <div class="welcomediv row">
-                    <div class="col-md-1">
-                        <img src="images/logo.png" width="100%">   
+
+                <div class="col-md-1" style="position: absolute;right: 0px;z-index: 1000">
+                                <a href="index.php"><img src="images/logo.png" width="100px"></a>
+                             </div>
+
+                <div id="slideshow" class="cycle-slideshow img-responsive"
+                            data-cycle-fx = "scrollHorz"
+                            data-cycle-speed = "900"
+                            data-cycle-timeout = "6500"
+                            data-cycle-pager = "#pager"
+                            data-cycle-pager-template = "<a href = '#'><img src='{{scr}}' height=50 width=48/></a>"
+                            data-cycle-next = "#next"
+                            data-cycle-prev = "#prev"
+                            data-cycle-manual-speed = "600"
+                            data-cycle-manual-fx = "scrollHorz"
+                            data-cycle-pager-fx = "fade" >
+                                <img src="images/bealady.png" alt="">
+                                <img src="images/dimple.png" alt="">
+                                <img src="images/flag.png" alt="">
+                                <img src="images/out.png" alt="">
+                                <img src="images/tree.png" alt="">
+                                <img src="images/jangwani.png" alt="">
+                            <div class="col-md-12" id="title">
+                                <center><h1 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">Be a Lady</h1></center>
+                                <center><h2 data-scroll="toggle(.fromRightIn, .fromRightOut)" class="txtShadow googlefont">Introducing the all new 
+                                   <a href="#order"><button class="btn" ><span>Bela Vendor</span></button></a></h2></center>
+                            </div>
+                            </div>
+                            
+                <!--<div class="welcomediv row">
+                    <div class="col-md-1" style="position: absolute;right: 0px;">
+                        <a href="index.php"><img src="images/logo.png" width="100%"></a>
                     </div>
                     <div class="followup row">
-                        <div class="col-md-6 col-md-offset-1 topmarg30 wyttxt">
+                        <div class="col-md-6 col-md-offset-3 topmarg30 wyttxt">
                             <div class="col-md-12">
                                 <center><h1 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">Be a Lady</h1></center>
                             </div>
                             <div class="col-md-12">
-                                <center><h2 data-scroll="toggle(.fromRightIn, .fromRightOut)" class="googlefont">Introducing the all new <span class="bella">
-                                    <td style="border:1px solid black;color: #b276ba;">
-                                        <a href="#bellavendor"> Bela Vendor</a></td></span></h2></center>
+                                <center><h2 data-scroll="toggle(.fromRightIn, .fromRightOut)" class="txtShadow googlefont">Introducing the all new 
+                                    <span class="bella">
+                                    <td>
+                                        <a href="#bellavendor"> Bela Vendor</a>
+                                    </td></span></h2></center>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
 
         </div>
@@ -110,12 +126,12 @@
             </div>
 
             <div data-scroll="toggle(.fromLeftIn, .fromLeftOut)" class="col-md-5 col-md-offset-1">
-                <img src="images/changombe.jpg" class="shadow" width="100%">
+                <img src="images/changombe.png" class="shadow" width="100%">
             </div>
             <div data-scroll="toggle(.fromRightIn, .fromRightOut)" class="col-md-5 col-md-offset-1" style="margin-top: 5%">
                 <center><h2 class="googlefont">Changombe High School.</h2></center><br>
                 <center><span style="font-size: 120%">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                   
                 </span></center>
             </div>
         </div>
@@ -124,22 +140,20 @@
         <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="col-md-5" style="margin-top: 5%">
                 <center><h2>Oysterbay High School.</h2></center><br>
                 <center><span style="font-size: 120%">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-                </span></center>
+                    </span></center>
             </div>
             <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="col-md-5 col-md-offset-1">
-                <img src="images/oysterbay.jpg" class="shadow" width="100%">
+                <img src="images/Oysterbay.png" class="shadow" width="100%">
             </div>
         </div>
 
         <div class="col-md-12" style="margin-top: 5%;margin-bottom: 5%">
             <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="col-md-5 col-md-offset-1">
-                <img src="images/kibasila.jpg" class="shadow" width="100%">
+                <img src="images/Kibasila.png" class="shadow" width="100%">
             </div>
             <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="col-md-5 col-md-offset-1" style="margin-top: 5%">
                 <center><h2>Kibasila High School.</h2></center><br>
                 <center><span style="font-size: 120%">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
                 </span></center>
             </div>
         </div>
@@ -148,12 +162,33 @@
         <div data-scroll="toggle(.fromLeftIn, .fromLeftOut)" class="col-md-5 col-md-offset-1" style="margin-top: 5%">
                 <center><h2>Jangwani High School.</h2></center>
                 <center><span style="font-size: 120%">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
                 </span></center>
             </div>
             <div data-scroll="toggle(.fromRightIn, .fromRightOut)" class="col-md-5 col-md-offset-1">
-                <img class="shadow" src="images/jangwani.jpg" width="100%">
+                <img class="shadow" src="images/jangwani.png" width="100%">
             </div>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <b><hr></b>
+        </div>
+
+        <div class="col-md-12 img-responsive" style="background-image: url('images/thee vendor.jpg');height: ;background-size: cover;background-attachment: fixed;">
+
+            <div id="order" class="col-md-6 col-md-offset-3" style="margin-top: 10vh">
+                <center><h2>The Bela Vendor</center>
+                    <div class=" col-md-12" style="margin-top: 2vh;margin-bottom: 5vh"><div class="col-md-8 col-md-offset-2"><hr></div></div>
+                <span style="font-size: 140%;text-shadow: -.08px -.08px 0px #dbdbdb;">
+                    The sanitary vending machine can dispense a single sanitary pad at a time depending on the needs of the client through the use of a coin. The sanitary  pad will be priced for 200tsh and the second sanitary pad will be priced for 500tsh:
+                    <li>A Bela Vendor with GSM and a capacity of 30 pads.</li>
+                    <li>A Bela Vendor without GSM and a capacity of 30 pads.</li>
+                    <li>A Bela Vendor with GSM and a capacity of 50 pads.</li>
+                    <li>A Bela Vendor without GSM and a capacity of 50 pads.</li>
+                </span>
+                <div id="order" class="col-md-4 col-md-offset-4" style="margin-top: 15vh">
+                    <center><button class="btn btn-block" data-toggle="modal" data-target="#popUpWindow" border: 1px solid white"><h4>Place Your Order</h4></button></center>
+                </div>
+            </div>
+            
         </div>
 
         <div class="col-md-4 col-md-offset-4" style="margin-bottom: 10vh;">
@@ -164,6 +199,7 @@
         <div id="bellavendor" class=" row" style="height: 100vh">
             <div class="col-md-4 col-md-offset-9" >
 
+    <!--
     <div class="info cycle-slideshow" 
         data-cycle-fx="fade" 
         data-cycle-timeout="6500"
@@ -195,7 +231,7 @@
             <span>Congratulations! Now you can collect your piece...<br><h4>It's as easy as that.</h4></span>
         </div>
         <div>
-            <span style="margin-left: 30%"> With quite a <b>capacity</b> Bela Vendor can house <span style="font-size: 150">50</span> pads when full.</span>
+            <span style="margin-left: 30%"> With quite a <b>capacity</b> Bela Vendor can house <span style="font-size: 150">30</span> pads when full.</span>
         </div>
         <div>
             <center><h1>Bela</h1> <span> initiated date by Lulu to help girls and specifically girls in schools. This aims to help a girl coup with her daily routine and academic activities during menstral circles.</span></center>
@@ -205,7 +241,7 @@
         </div>
 
         
-    </div>
+    </div>-->
             </div>
             <div id="slideshow" class="cycle-slideshow col-md-12 row"
                             data-cycle-fx = "scrollHorz"
@@ -231,8 +267,8 @@
         </div>
 
         <div data-scroll="toggle(.fromBottomIn, .fromBottomOut)" id="aboutus" class="col-md-12">
-            <div class="col-md-4 col-md-offset-4" style="margin-top: 10vh;">
-                <center><h1>About Us<hr></h1></center>
+            <div class="col-md-4 col-md-offset-4">
+                <center><h1 style="margin-top: 15vh;">About Us<hr></h1></center>
             </div>
             <div class="col-md-8 col-md-offset-2" style="margin-top: 10vh;margin-bottom: 15vh">
                 
@@ -250,41 +286,76 @@
             </div>
         </div>
 
+        <div class="col-md-12">
+        
+        <div class="col-md-10 col-md-offset-1" style="background-color: #b43db8">            
+            <iframe class="col-md-10 col-md-offset-1" width="90%" height="550" src="https://www.youtube.com/embed/lCzn7089GI0" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-md-4 col-md-offset-4" style="margin-top: 10vh">
+            <center><h1>Testimonies<hr></h1></center>
+        </div>
+
+        <div class="col-md-12" style="margin-top: 5vh;">
+        <div class="col-md-6">
+            <div align="center" class="col-md-12 col-md-offset- embed-responsive embed-responsive-16by9">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/UIKwOEoaWm8" frameborder="0" gesture="media" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div align="center" class="col-md-12 col-md-offset- embed-responsive embed-responsive-16by9">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/FEehirxbOC4" frameborder="0" gesture="media" allowfullscreen></iframe>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
         <div id="team" class="col-md-4 col-md-offset-4" style="margin-bottom: 5vh;margin-top: 10vh;">
             <center><h1>Meet the Team <hr></h1></center>
         </div>
 
-        <div class="col-md-12 row team" style="height: 50vh;background-color:">
+        <div class="col-md-12 row team" style="margin-bottom: 5vh;background-color:">
             <div class="col-md-2 col-md-offset-1" style="margin-top: 10vh">
                 <div class="col-md-12">
-                    <img src="images/imports/lulu.png" width="100%" style="border-radius: 100%">
+                    <img src="images/imports/lulu.jpg" width="100%" style="border-radius: 100%">
                 </div>
                 <div class="col-md-12">
                     <center><h3>Lulu Ameir</h3></center>
                     <center><span>Project & Team Manager</span></center>
                 </div>
             </div>
-            <div class="col-md-2 col-md-offset-1" style="margin-top: 10vh">
+            <div class="col-md-2 " style="margin-top: 10vh">
                 <div class="col-md-12">
-                    <img src="images/imports/kaijuko.png" width="100%" style="border-radius: 100%">
+                    <img src="images/imports/kaijuko2.jpg" width="100%" style="border-radius: 100%">
                 </div>
                 <div class="col-md-12">
                     <center><h3>Kaijuko Mkandala</h3></center>
                     <center><span>Project Coordinator</span></center>
                 </div>
             </div>
-            <div class="col-md-2 col-md-offset-1" style="margin-top: 10vh">
+            <div class="col-md-2 " style="margin-top: 10vh">
                 <div class="col-md-12">
-                    <img src="images/imports/james.png" width="100%" style="border-radius: 100%">
+                    <img src="images/imports/frank.jpg" width="100%" style="border-radius: 100%">
                 </div>
                 <div class="col-md-12">
                     <center><h3>James Osidore</h3></center>
                     <center><span>Data Collector</span></center>
                 </div>
             </div>
-            <div class="col-md-2 col-md-offset-1" style="margin-top: 10vh">
+            <div class="col-md-2 " style="margin-top: 10vh">
                 <div class="col-md-12">
-                    <img src="images/imports/melania.png" width="100%" style="border-radius: 100%">
+                    <img src="images/imports/melania2.jpg" width="100%" style="border-radius: 100%">
+                </div>
+                <div class="col-md-12">
+                    <center><h3>Melania Chamlonde</h3></center>
+                    <center><span>Data Collector</span></center>
+                </div>
+            </div>
+            <div class="col-md-2 " style="margin-top: 10vh">
+                <div class="col-md-12">
+                    <img src="images/imports/rehema2.jpg" width="100%" style="border-radius: 100%">
                 </div>
                 <div class="col-md-12">
                     <center><h3>Melania Chamlonde</h3></center>
@@ -293,129 +364,198 @@
             </div>
         </div>
 
-        <div id="coverage" class="col-md-12 wallppr2" style="height: 100vh;">
-            <div id="contactmap" class="col-md-6 row">
-                <div class="col-md-6 col-md-offset-2" style="margin-top: 10%;">
-                    <center><h2>Contact Us</h2></center>
-                </div>
-                <div class="col-md-6 col-md-offset-1">
-                    <p>Address</p>
-                    <p>phone</p>
-                    <p>email</p>
-                </div>
-                <div class="col-md-6 col-md-offset-2">
-                    <center><h2>Visit Us</h2></center>
-                </div>
-                <div class="col-md-6 col-md-offset-1">
-                    <p>Location</p>
-                    <p>City</p>
-                </div>
-
-            </div>
+        <div class="col-md-12 row">
+            <?php include 'map.php'; ?>            
         </div>
 
-        
 
         <div class="col-md-12 row">
+            <div class="col-md-12" style="margin-top: 15vh">
+                <div class="col-md-4 col-md-offset-4">
+                    <center><h1>Get In Touch</h1><hr></center>
+                </div>
+            </div>
 
                 <div id="contact" class="col-md-6" style="">
                     <div class="col-md-12"><center><h2>Contact Form</h2></center></div>
-                <form class="form-group">
+
+                <form method="POST" action="cont.php">
                 <div class="col-md-8 col-md-offset-2" style="margin-top: 5%;margin-bottom: 5%;border: .6px solid #dbdbdb">
                     <div class="col-md-12 form-group" style="margin-top: 5%"><br><h5>Name</h5></div>
                     <div class="col-md-6 form-group">
-                        First<br><input class="form-control" type="text" name="">
+                        First<br><input class="form-control" type="text" name="first_name">
                     </div>
                     <div class="col-md-6">
-                        Last<br><input class="form-control" type="text" name="">
+                        Last<br><input class="form-control" type="text" name="event">
                     </div>
                     <div class="col-md-12">
-                        Email<br><input class="form-control" type="text" name="">
+                        Email<br><input class="form-control" type="text" name="email">
                     </div>
                     <div class="col-md-12">
-                        Message<br><textarea class="form-control"></textarea><br>
+                        Message<br><textarea class="form-control" name="venue">
+                            
+                        </textarea><br>
                     </div>
                     <div class="col-md-12" style="margin-bottom: 10%">
-                        <button class="btn col-md-12" style="background-color: #b276ba">Send</button>
+                        <button type="Submit" name="first_name" class="btn col-md-12" style="background-color: #b43db8">Send</button>
                     </div>
                 </div>
             </form>
             </div>
 
             <div class="col-md-6">
-                <div class="col-md-10 col-md-offset-1" style="border:solid 1px #dbdbdb;margin-top: 12vh">
-                    <div class="row" style="height: 10vh;background-color: #b276ba">
-                        <center><h2>Coverage</h2></center>
-                    </div>
-                    <div class="col-md-12" style="height: 35vh">
-                        <center style="margin-top: 10vh">
-                            <span style="font-size: 135%" >
-                                On the above map representation we have set markers that show areas that the 
-                                <span style="color: #b276ba"> Bela Vendor </span> machine is currently serving. The mission is by next
-                                is to cover more schools at an exponential growth and eventually national wide.
-                            </span>
-                        </center>
-                    </div>
+                <div class="col-md-6 col-md-offset-2" style="margin-top: 10%;">
+                    <center><h2>Contact Us</h2></center>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <table class="table">
+                        <tr>
+                            <td>Address:</td><td></td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td><td>+255687217884</td>
+                            <td></td><td>+25568523910</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td><td>luluameir@bealady.co.tz</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6 col-md-offset-2">
+                    <center><h2>Visit Us</h2></center>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <table class="table">
+                        <tr>
+                            <td>Location:</td><td>Mikocheni B, plot 389 House No.27</td>
+                        </tr>
+                        <tr>
+                            <td>City:</td><td>Dar es Salaam</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
    
 
-        <div class="col-md-12 row" style="height: 60vh;background-color: #b276ba;position: relative;">
+        <div class="col-md-12 row" style="height: 60vh;background-color: #b43db8;position: relative;">
                 <div class="col-md-12" style="height: 50vh;background-color: ">
         <div class="col-md-6 col-md-offset-3" style="margin-top: 10%">
-            <div class="col-md-3 instagram" style="background-color: ;"><center>
-                <a href=""><img src="logo/instagram.png" height="auto" onmouseover="this.src='logo/instagrambk.png';" onmouseout="this.src='logo/instagram.png';"></a>
+            <div class="col-md-2 col-md-offset-3 instagram" style="background-color: ;"><center>
+                <a target="_blank" href="https://www.instagram.com/bealadytz/?hl=en"><img src="logo/instagram.png" height="auto" onmouseover="this.src='logo/instagrambk.png';" onmouseout="this.src='logo/instagram.png';"></a>
             </center></div>
-            <div class="col-md-3 instagram" style="background-color: ;"><center>
+            <div class="col-md-2 instagram" style="background-color: ;"><center>
                 <a href=""><img src="logo/facebook.png" height="auto" onmouseover="this.src='logo/facebookbk.png';" onmouseout="this.src='logo/facebook.png';"></a>
             </center></div>
-            <div class="col-md-3 instagram">
+            <div class="col-md-2 instagram">
                 <center>
-                <a href="">
+                <a href="https://twitter.com/BBealady?lang=en" target="_blank">
                     <img src="logo/twitter.png" height="auto" onmouseover="this.src='logo/twitterbk.png';" onmouseout="this.src='logo/twitter.png';">
                 </a>
                 </center>
             </div>
-            <div class="col-md-3 instagram">
-                <center>
-                <a href="">
-                    <img src="logo/linked.png" height="auto" onmouseover="this.src='logo/linkedbk.png';" onmouseout="this.src='logo/linked.png';">
-                </a>
-                </center>
             </div>
             </div>
+            <div class="col-md-12">
+                <center><p style="bottom: 0;position:;"> BeaLady &copy; 2017 </p></center>
             </div>
         </div>
 
 
+        <div class="modal fade" id="popUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Order</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body col-md-12">
+                    <form role="form" method="POST" action="order.php">
+                        <div class="form-group col-md-12">
+                            <input type="text" name="first_name" class="form-control" placeholder="Full name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                        </div>
+                         <div class="form-group col-md-6">
+                            <input type="tel" name="telephone" class="form-control" placeholder="Mobile No.">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select name="event" class="form-control show-tick show-menu-arrow" onchange="val()" id="selected">
+                              <option selected disabled hidden>Choose a type of machine...</option>
+                              <option>30 pads capacity Bela Vendor with GSM</option>
+                              <option>30 pads capacity Bela Vendor without GSM</option>
+                              <option>50 pads capacity Bela Vendor with GSM</option>
+                              <option>50 pads capacity Bela Vendor without GSM</option>
+                            </select>
+                        </div>
+
+                         <div class="form-group col-md-6">
+                            <input type="Number" name="people" class="form-control" placeholder="Number of users">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="text" name="venue" class="form-control" placeholder="Location">
+                        </div>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-block" style="background-color: #b43db8; black;color:white">Submit</button>
+                     <center><p style=" margin-top: 3%;color: #6d6b6c">* Thank you. Once you've submitted our people will get back to you within 1 working day.</p></center>
+                </div>
+
+                 </form>
+            </div>
+        </div>
+    </div>
+
+
+
         <script src="js/ScrollTrigger.min.js"></script>
+
+        <script src="ScrollTrigger.min.js"></script>
                     <script>
                         document.addEventListener('DOMContentLoaded', function(){
                         var trigger = new ScrollTrigger();
                             });
                     </script>
 
-        <script>
-            window.counter = function() {
-                // this refers to the html element with the data-scroll-showCallback tag
-                var span = this.querySelector('span');
-                var current = parseInt(span.textContent);
 
-                span.textContent = current + 1;
-            };
+        <script type="text/javascript">
+    var locations = [
+      ['Changombe Secondary Schools', -6.8492366, 39.271656, 4],
+      ['Jangwani Secondary Schools', -6.8120169, 39.2708682, 5],
+      ['Kibasila Secondary Schools', -6.852262, 39.2655537, 3]
+    ];
 
-            document.addEventListener('DOMContentLoaded', function(){
-              var trigger = new ScrollTrigger({
-                  addHeight: true
-              });
-            });
-        </script>
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: new google.maps.LatLng(-6.8280906,39.1910649),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
+    var infowindow = new google.maps.InfoWindow();
 
-   
+    var marker, i;
 
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
 
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
 
 </body>
 </html>
